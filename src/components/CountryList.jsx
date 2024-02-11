@@ -4,8 +4,10 @@ import Spinner from './Spinner'
 import CityItem from './CountryItem'
 import Message from './Message'
 import CountryItem from './CountryItem'
+import { useCity } from '../contexts/CityContext'
 
-function CountryList({cities, isLoading}) {
+function CountryList() {
+  const {cities, isLoading} = useCity()
   const countries = cities.reduce((arr,city)=>
     {
       if(!arr.map(el=>el.country).includes(city.country)){ 
